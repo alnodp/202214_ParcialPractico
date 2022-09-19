@@ -4,8 +4,6 @@ import { Repository } from 'typeorm';
 import { SocioEntity } from './socio.entity';
 import { BusinessError, BusinessLogicException } from '../shared/errors/business-errors';
 
-const REG_EXP_EMAIL = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/";
-
 @Injectable()
 export class SocioService {
   constructor(
@@ -18,7 +16,7 @@ export class SocioService {
   }
 
   async findOne(id: string): Promise<SocioEntity> {
-    const socio: SocioEntity = await this.socioRepository.findOne({where: {id}, relations: ["culturasGastronomicas", "pais"]});
+    const socio: SocioEntity = await this.socioRepository.findOne({where: {id}, relations: ["clubes"]});
     if (!socio)
         throw new BusinessLogicException("No se encontró el socio con la identificación proporcionada.", BusinessError.NOT_FOUND);
     return socio;
