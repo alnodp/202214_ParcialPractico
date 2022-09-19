@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "2e75f0fc-b7ac-4181-ab73-aacb0d3e86cc",
+		"name": "Club-Socio",
+		"description": "Buy or rent spacecrafts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4920142"
+	},
+	"item": [
+		{
+			"name": "Agregar socio a club",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/551f0788-5f91-4d76-b88e-556ad30aca51/members/6a2ecab6-ff09-4d67-985e-2488d560be72",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"551f0788-5f91-4d76-b88e-556ad30aca51",
+						"members",
+						"6a2ecab6-ff09-4d67-985e-2488d560be72"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/551f0788-5f91-4d76-b88e-556ad30aca51/members/6a2ecab6-ff09-4d67-985e-2488d560be72",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"551f0788-5f91-4d76-b88e-556ad30aca51",
+								"members",
+								"6a2ecab6-ff09-4d67-985e-2488d560be72"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "439"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b7-YuDLk4BLhDSEqLupvOOmWlRkmYA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Sep 2022 04:52:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"551f0788-5f91-4d76-b88e-556ad30aca51\",\n    \"nombre\": \"club 1\",\n    \"fechaFundacion\": \"2010-07-18\",\n    \"imagenUrl\": \"https://countryclubdebogota.com//uploads/view_object_image/image/16/DSC_0074.JPG\",\n    \"descripcion\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor scelerisque asdwwdas.\",\n    \"socios\": [\n        {\n            \"id\": \"6a2ecab6-ff09-4d67-985e-2488d560be72\",\n            \"usuario\": \"felipe\",\n            \"email\": \"felipe@email.com\",\n            \"fechaNacimiento\": \"1992-05-08\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}

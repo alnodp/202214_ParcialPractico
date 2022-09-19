@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "5f50b54a-9032-4de6-ade9-cdd65d7105e3",
+		"name": "Socio",
+		"description": "Buy or rent spacecrafts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4920142"
+	},
+	"item": [
+		{
+			"name": "Agregar un socio",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": \"prueba\",\r\n    \"email\": \"prueba@email.com\",\r\n    \"fechaNacimiento\": \"1997-07-18\",\r\n    \"clubes\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/members",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"members"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"andres\",\r\n    \"email\": \"andres@email.com\",\r\n    \"fechaNacimiento\": \"1990-04-18\",\r\n    \"clubes\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/members",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"members"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "134"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"86-UYSVOF4Z35IYVvGxM2zhsB5c+QQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Sep 2022 03:35:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"usuario\": \"andres\",\n    \"email\": \"andres@email.com\",\n    \"fechaNacimiento\": \"1990-04-18\",\n    \"clubes\": [],\n    \"id\": \"dd414998-77db-46c4-a5d6-d35e1595378e\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener todos los socios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/members",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"members"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/members",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"members"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "247"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f7-HurMe3X275RVxUIUYpFNO5mTxgE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Sep 2022 03:42:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"6a2ecab6-ff09-4d67-985e-2488d560be72\",\n        \"usuario\": \"felipe\",\n        \"email\": \"felipe@email.com\",\n        \"fechaNacimiento\": \"1992-05-08\"\n    },\n    {\n        \"id\": \"acc301b7-4481-4429-ad37-7e65277278de\",\n        \"usuario\": \"andres\",\n        \"email\": \"andres@email.com\",\n        \"fechaNacimiento\": \"1990-04-18\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener un socio",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/members/6a2ecab6-ff09-4d67-985e-2488d560be72",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"members",
+						"6a2ecab6-ff09-4d67-985e-2488d560be72"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/members/dd414998-77db-46c4-a5d6-d35e1595378e",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"members",
+								"dd414998-77db-46c4-a5d6-d35e1595378e"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "122"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7a-y/ik8G5l4b9FV4/UgAQI6x3DBQc\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Sep 2022 03:36:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"dd414998-77db-46c4-a5d6-d35e1595378e\",\n    \"usuario\": \"andres\",\n    \"email\": \"andres@email.com\",\n    \"fechaNacimiento\": \"1990-04-18\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar un socio",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usuario\": \"prueba actualizada\",\r\n    \"email\": \"pruebaactualizada@email.com\",\r\n    \"fechaNacimiento\": \"2000-07-18\",\r\n    \"clubes\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/members/cb0f0cd7-288e-4370-ab76-81652579be86",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"members",
+						"cb0f0cd7-288e-4370-ab76-81652579be86"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"usuario\": \"prueba actualizada\",\r\n    \"email\": \"pruebaactualizada@email.com\",\r\n    \"fechaNacimiento\": \"2000-07-18\",\r\n    \"clubes\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/members/cb0f0cd7-288e-4370-ab76-81652579be86",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"members",
+								"cb0f0cd7-288e-4370-ab76-81652579be86"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "157"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9d-zk/EfMUGGhIT+6WZli92gErDV5Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Sep 2022 04:13:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"usuario\": \"prueba actualizada\",\n    \"email\": \"pruebaactualizada@email.com\",\n    \"fechaNacimiento\": \"2000-07-18\",\n    \"clubes\": [],\n    \"id\": \"cb0f0cd7-288e-4370-ab76-81652579be86\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar socio",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/members/cb0f0cd7-288e-4370-ab76-81652579be86",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"members",
+						"cb0f0cd7-288e-4370-ab76-81652579be86"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "204",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/members/cb0f0cd7-288e-4370-ab76-81652579be86",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"members",
+								"cb0f0cd7-288e-4370-ab76-81652579be86"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Sep 2022 04:13:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000",
+			"type": "string"
+		}
+	]
+}

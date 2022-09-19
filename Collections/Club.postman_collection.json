@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "2c92678d-e1fa-4509-bc67-09933ee61f47",
+		"name": "Club",
+		"description": "Buy or rent spacecrafts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4920142"
+	},
+	"item": [
+		{
+			"name": "Agregar un club",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"club prueba\",\r\n    \"fechaFundacion\": \"2019-09-19\",\r\n    \"imagenUrl\": \"https://countryclubdebogota.com//uploads/view_object_image/image/16/DSC_0074.JPG\",\r\n    \"descripcion\": \"prueba ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor scelerisque Lorem.\",\r\n    \"socios\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clubs",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"club 1\",\r\n    \"fechaFundacion\": \"2010-07-18\",\r\n    \"imagenUrl\": \"https://countryclubdebogota.com//uploads/view_object_image/image/16/DSC_0074.JPG\",\r\n    \"descripcion\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor scelerisque asdwwdas.\",\r\n    \"socios\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clubs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "317"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13d-3HSTAA7h3sGR3TYUE6kdrbO7zKQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Sep 2022 04:06:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"club 1\",\n    \"fechaFundacion\": \"2010-07-18\",\n    \"imagenUrl\": \"https://countryclubdebogota.com//uploads/view_object_image/image/16/DSC_0074.JPG\",\n    \"descripcion\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor scelerisque asdwwdas.\",\n    \"socios\": [],\n    \"id\": \"551f0788-5f91-4d76-b88e-556ad30aca51\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Obtener todos los clubes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "610"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"262-A/02gM8B/pfSQAKV+ZlMSuHGA30\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Sep 2022 04:07:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"551f0788-5f91-4d76-b88e-556ad30aca51\",\n        \"nombre\": \"club 1\",\n        \"fechaFundacion\": \"2010-07-18\",\n        \"imagenUrl\": \"https://countryclubdebogota.com//uploads/view_object_image/image/16/DSC_0074.JPG\",\n        \"descripcion\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor scelerisque asdwwdas.\"\n    },\n    {\n        \"id\": \"44ac7600-779d-4cb7-8cdb-c9f0ab73ae70\",\n        \"nombre\": \"club 2\",\n        \"fechaFundacion\": \"2015-05-15\",\n        \"imagenUrl\": \"https://countryclubdebogota.com//uploads/view_object_image/image/16/DSC_0074.JPG\",\n        \"descripcion\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor scelerisque Lorem.\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Obtener un club",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/551f0788-5f91-4d76-b88e-556ad30aca51",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"551f0788-5f91-4d76-b88e-556ad30aca51"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/551f0788-5f91-4d76-b88e-556ad30aca51",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"551f0788-5f91-4d76-b88e-556ad30aca51"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "305"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"131-S0OH/Hl/GDCcUQKbhKMIJqXODnA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Sep 2022 04:06:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"551f0788-5f91-4d76-b88e-556ad30aca51\",\n    \"nombre\": \"club 1\",\n    \"fechaFundacion\": \"2010-07-18\",\n    \"imagenUrl\": \"https://countryclubdebogota.com//uploads/view_object_image/image/16/DSC_0074.JPG\",\n    \"descripcion\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor scelerisque asdwwdas.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Actualizar un club",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"club prueba 2\",\r\n    \"fechaFundacion\": \"2019-09-20\",\r\n    \"imagenUrl\": \"https://countryclubdebogota.com//uploads/view_object_image/image/16/DSC_0074.JPG\",\r\n    \"descripcion\": \"prueba 2 ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor scelerisque Lorem.\",\r\n    \"socios\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/clubs/4e43771c-233d-4660-b534-aa62d1ce6d7b",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"4e43771c-233d-4660-b534-aa62d1ce6d7b"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"club prueba 2\",\r\n    \"fechaFundacion\": \"2019-09-20\",\r\n    \"imagenUrl\": \"https://countryclubdebogota.com//uploads/view_object_image/image/16/DSC_0074.JPG\",\r\n    \"descripcion\": \"prueba 2 ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor scelerisque Lorem.\",\r\n    \"socios\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/clubs/4e43771c-233d-4660-b534-aa62d1ce6d7b",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"4e43771c-233d-4660-b534-aa62d1ce6d7b"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "324"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"144-ryaCVzhUU7xw/7W6B42IjGiq2YQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Sep 2022 04:12:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nombre\": \"club prueba 2\",\n    \"fechaFundacion\": \"2019-09-20\",\n    \"imagenUrl\": \"https://countryclubdebogota.com//uploads/view_object_image/image/16/DSC_0074.JPG\",\n    \"descripcion\": \"prueba 2 ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor scelerisque Lorem.\",\n    \"socios\": [],\n    \"id\": \"4e43771c-233d-4660-b534-aa62d1ce6d7b\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Eliminar un club",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/clubs/4e43771c-233d-4660-b534-aa62d1ce6d7b",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"clubs",
+						"4e43771c-233d-4660-b534-aa62d1ce6d7b"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "204",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/clubs/4e43771c-233d-4660-b534-aa62d1ce6d7b",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"clubs",
+								"4e43771c-233d-4660-b534-aa62d1ce6d7b"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 19 Sep 2022 04:13:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "localhost:3000/api/v1",
+			"type": "string"
+		}
+	]
+}
