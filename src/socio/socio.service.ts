@@ -12,11 +12,11 @@ export class SocioService {
   ){}
 
   async findAll(): Promise<SocioEntity[]> {
-    return await this.socioRepository.find({ relations: ["clubes"]});
+    return await this.socioRepository.find();
   }
 
   async findOne(id: string): Promise<SocioEntity> {
-    const socio: SocioEntity = await this.socioRepository.findOne({where: {id}, relations: ["clubes"]});
+    const socio: SocioEntity = await this.socioRepository.findOne({where: {id}});
     if (!socio)
         throw new BusinessLogicException("No se encontró el socio con la identificación proporcionada.", BusinessError.NOT_FOUND);
     return socio;

@@ -12,11 +12,11 @@ export class ClubService {
   ){}
 
   async findAll(): Promise<ClubEntity[]> {
-    return await this.clubRepository.find({ relations: ["socios"]});
+    return await this.clubRepository.find();
   }
 
   async findOne(id: string): Promise<ClubEntity> {
-    const club: ClubEntity = await this.clubRepository.findOne({where: {id}, relations: ["socios"]});
+    const club: ClubEntity = await this.clubRepository.findOne({where: {id}});
     if (!club)
         throw new BusinessLogicException("No se encontró el club con la identificación proporcionada.", BusinessError.NOT_FOUND);
     return club;

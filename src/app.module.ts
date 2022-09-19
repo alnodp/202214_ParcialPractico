@@ -21,7 +21,7 @@ import { ClubSocioModule } from './club-socio/club-socio.module';
         SocioEntity,
         ClubEntity
       ],
-      dropSchema: true,
+      dropSchema: false,
       synchronize: true,
       keepConnectionAlive: true
     }),
