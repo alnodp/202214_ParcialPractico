@@ -30,7 +30,7 @@ export class ClubService {
     const persisteClub: ClubEntity = await this.clubRepository.findOne({where:{id}});
     if (!persisteClub)
       throw new BusinessLogicException("No se encontró el club con la identificación proporcionada.", BusinessError.NOT_FOUND);
-      club.id = id;
+    club.id = id;
     return await this.clubRepository.save(club);
   }
 
