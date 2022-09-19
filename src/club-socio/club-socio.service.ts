@@ -16,18 +16,21 @@ export class ClubSocioService {
   ) { }
 
   async addSocioToClub(clubId: string, socioId: string): Promise<ClubEntity> {
-    const socio: SocioEntity = await this.socioRepository.findOne({ where: { id: socioId }, relations: ["clubes"] });
+    const socio: SocioEntity = await this.socioRepository.findOne({ where: { id: socioId } });
     if (!socio)
       throw new BusinessLogicException("No se encontró el socio con la identificación enviada", BusinessError.NOT_FOUND);
-    const club: ClubEntity = await this.clubRepository.findOne({ where: { id: clubId }, relations: ["socios"] })
+    const club: ClubEntity = await this.clubRepository.findOne({ where: { id: clubId } })
     if (!club)
       throw new BusinessLogicException("No se encontró la club con la identificación proporcionada.", BusinessError.NOT_FOUND);
+    if(!club.socios) {
+      club.socios = [];
+    }
     club.socios = [...club.socios, socio];
-    return await this.clubRepository.save(socio);
+    return await this.clubRepository.save(club);
   }
 
   async findSociosFromClub(clubId: string): Promise<SocioEntity[]> {
-    const club: ClubEntity = await this.clubRepository.findOne({ where: { id: clubId }, relations: ["socios"] });
+    const club: ClubEntity = await this.clubRepository.findOne({ where: { id: clubId } });
     if (!club)
       throw new BusinessLogicException("No se encontró el club con la identificación proporcionada.", BusinessError.NOT_FOUND)
     return club.socios;
@@ -37,7 +40,7 @@ export class ClubSocioService {
     const socio: SocioEntity = await this.socioRepository.findOne({ where: { id: socioId }, relations: ["clubes"] });
     if (!socio)
       throw new BusinessLogicException("No se encontró el socio con la identificación enviada", BusinessError.NOT_FOUND)
-    const club: ClubEntity = await this.clubRepository.findOne({ where: { id: clubId }, relations: ["socios"] });
+    const club: ClubEntity = await this.clubRepository.findOne({ where: { id: clubId } });
     if (!club)
       throw new BusinessLogicException("No se encontró la club con la identificación proporcionada.", BusinessError.NOT_FOUND)
     const clubsocio: SocioEntity = club.socios.find(e => e.id === socio.id);
@@ -47,7 +50,7 @@ export class ClubSocioService {
   }
 
   async updateSociosFromClub(clubId: string, socios: SocioEntity[]): Promise<ClubEntity> {
-    const club: ClubEntity = await this.clubRepository.findOne({ where: { id: clubId }, relations: ["socios"] });
+    const club: ClubEntity = await this.clubRepository.findOne({ where: { id: clubId } });
     if (!club)
       throw new BusinessLogicException("No se encontró el club con la identificación proporcionada.", BusinessError.NOT_FOUND)
     for (let i = 0; i < socios.length; i++) {
@@ -63,7 +66,7 @@ export class ClubSocioService {
     const socio: SocioEntity = await this.socioRepository.findOne({ where: { id: socioId }, relations: ["clubes"] });
     if (!socio)
       throw new BusinessLogicException("No se encontró el socio con la identificación dada", BusinessError.NOT_FOUND)
-    const club: ClubEntity = await this.clubRepository.findOne({ where: { id: clubId }, relations: ["socios"] });
+    const club: ClubEntity = await this.clubRepository.findOne({ where: { id: clubId } });
     if (!club)
       throw new BusinessLogicException("No se encontró el club con la identificación proporcionada.", BusinessError.NOT_FOUND)
     const clubsocio: SocioEntity = club.socios.find(e => e.id === socio.id);
