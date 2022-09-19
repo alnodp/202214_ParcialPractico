@@ -1,5 +1,5 @@
 import { ClubEntity } from "../club/club.entity";
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, ManyToMany } from "typeorm";
 
 @Entity()
 export class SocioEntity {
@@ -16,7 +16,7 @@ export class SocioEntity {
   @Column()
   fechaNacimiento: Date;
 
-  @OneToMany(() => ClubEntity, (club) => club.socios)
+  @ManyToMany(() => ClubEntity, (club) => club.socios)
   clubes: ClubEntity[];
 
 }

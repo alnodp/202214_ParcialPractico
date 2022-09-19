@@ -3,10 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SocioModule } from './socio/socio.module';
 import { ClubModule } from './club/club.module';
-import { SocioClubModule } from './socio-club/socio-club.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { SocioEntity } from './socio/socio.entity';
 import { ClubEntity } from './club/club.entity';
+import { ClubSocioModule } from './club-socio/club-socio.module';
 
 @Module({
   imports: [
@@ -27,7 +27,7 @@ import { ClubEntity } from './club/club.entity';
     }),
     SocioModule,
     ClubModule,
-    SocioClubModule
+    ClubSocioModule
   ],
   controllers: [AppController],
   providers: [AppService],
